@@ -1,0 +1,32 @@
+{
+  "name": "promise-http",
+  "version": "0.1.0",
+  "description": "A simple promise-based HTTP Client that is aware of HTTP status codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node --coffee spec --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vinelab/node-promise-http"
+  },
+  "keywords": [
+    "http",
+    "client",
+    "promise"
+  ],
+  "author": "Abed Halawi <abed.halawi@vinelab.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vinelab/node-promise-http/issues"
+  },
+  "homepage": "https://github.com/Vinelab/node-promise-http",
+  "dependencies": {
+        "q": "~1.0.1",
+        "q-io": "~1.11.3"
+  },
+  "devDependencies": {
+        "jasmine-node": "~2.0.0",
+        "coffee-script": "~1.7.1"
+  }
+}
