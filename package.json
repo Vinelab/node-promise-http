@@ -1,8 +1,8 @@
 {
   "name": "promise-http",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple promise-based HTTP Client that is aware of HTTP status codes",
-  "main": "index.js",
+  "main": "lib/Http.js",
   "scripts": {
     "test": "./node_modules/.bin/jasmine-node --coffee spec --verbose"
   },
