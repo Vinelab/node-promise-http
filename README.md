@@ -1,3 +1,5 @@
+![Travis-CI Status](https://travis-ci.org/Vinelab/node-promise-http.svg?branch=master)
+
 # Promise HTTP
 
 A simple wrapper for [q-io/http](https://github.com/kriskowal/q-io#requestrequest-object-or-url)
