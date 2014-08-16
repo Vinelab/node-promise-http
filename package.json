@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/Vinelab/node-promise-http",
   "dependencies": {
-        "q": "~1.0.1",
-        "q-io": "~1.11.3"
+        "q": "~2.0.2",
+        "q-io": "2.0.6"
   },
   "devDependencies": {
         "jasmine-node": "~2.0.0",
