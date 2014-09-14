@@ -13,9 +13,7 @@ describe 'Http', ->
         response:
             status: 200
             body: {
-                forEach: (dfd)->
-                    data = {toString: -> 'some data'}
-                    dfd(data)
+                read: -> return 'some data'
             }
     }
 

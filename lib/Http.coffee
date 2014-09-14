@@ -30,7 +30,7 @@ class Http
     ###
     respond: (response, dfd)=>
         if @validStatus response.status
-            response.body.forEach (data)-> dfd.resolve(data.toString())
+            dfd.resolve(response.body.read())
         else
             dfd.reject new Error(response.status)
             @error new Error(response.status)

@@ -1,6 +1,6 @@
 {
   "name": "promise-http",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple promise-based HTTP Client that is aware of HTTP status codes",
   "main": "lib/Http.js",
   "scripts": {
