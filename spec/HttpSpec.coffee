@@ -12,6 +12,9 @@ describe 'Http', ->
         then: (promised)-> promised(@response)
         response:
             status: 200
+            node: {
+                read: -> return {status: 400, error: 'Bad Request'}
+            }
             body: {
                 read: -> return 'some data'
             }
@@ -85,16 +88,20 @@ describe 'Http', ->
         spyOn(Http, 'error')
 
         dfd = jasmine.createSpyObj('dfd', ['reject'])
-        Http.respond({status: 500}, dfd)
-        expect(dfd.reject).toHaveBeenCalledWith(new Error(500))
+        # Set an error code on the response
+        response = QHttp.response
+        response.status = 400
+
+        Http.respond(response, dfd)
+        expect(dfd.reject).toHaveBeenCalledWith({status: 400, error: 'Bad Request'})
 
         QHttp.response.status = 400
         expect(Http.request('http://some.url')).toBe(Q.promise)
-        expect(Q.reject).toHaveBeenCalledWith(new Error(400))
+        expect(Q.reject).toHaveBeenCalledWith({status: 400, error: 'Bad Request'})
 
         QHttp.response.status = 404
         expect(Http.request('http://non-existing.url')).toBe(Q.promise)
-        expect(Q.reject).toHaveBeenCalledWith(new Error(404))
+        expect(Q.reject).toHaveBeenCalledWith({status: 400, error: 'Bad Request'})
 
     it 'passes through the request when GETting with a url as a string', ->
         spyOn(Http, 'request')
