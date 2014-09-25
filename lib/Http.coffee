@@ -32,7 +32,7 @@ class Http
         if @validStatus response.status
             dfd.resolve(response.body.read())
         else
-            dfd.reject new Error(response.status)
+            dfd.reject(response.node.read())
             @error new Error(response.status)
 
     ###
